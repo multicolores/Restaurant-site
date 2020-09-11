@@ -1,20 +1,17 @@
 import React from "react";
 import "./App.scss";
-
-import { motion } from "framer-motion";
+import image from "./photo/home_image.jpg";
+import { motion, useTransform, useViewportScroll } from "framer-motion";
 
 const pageVariants = {
   initial: {
     opacity: 0,
-    y: "-1%",
   },
   in: {
     opacity: 1,
-    y: 0,
   },
   out: {
     opacity: 0,
-    y: "1%",
   },
 };
 const pageTransition = {
@@ -23,6 +20,10 @@ const pageTransition = {
 };
 
 function About() {
+  const { scrollYProgress } = useViewportScroll();
+  const opacity = useTransform(scrollYProgress, [-0.001, 0.3], [1, 0]); // [ du haut de la page (0), jusque en bas (1)], [scale passe de 1 ( en haut ), a 1.25 ( en bas )]
+  const y = useTransform(scrollYProgress, [-0.001, 0.3], [0, -100]);
+
   return (
     <>
       <motion.div
@@ -31,8 +32,21 @@ function About() {
         exit="out"
         variants={pageVariants}
         transition={pageTransition}
+        className="about_container"
       >
-        <h1>About page</h1>
+        <div className="header">
+          <img src={image} alt="" />
+          <motion.div style={{ opacity: opacity }} className="h1">
+            <motion.h1 style={{ y: y }}>About</motion.h1>
+          </motion.div>
+        </div>
+        <h2>text</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
+          quisquam magnam iusto, consequuntur autem suscipit maiores est facilis
+          labore quibusdam excepturi necessitatibus repellendus tempora, nam
+          iure perspiciatis, corporis nesciunt neque?
+        </p>
       </motion.div>
     </>
   );

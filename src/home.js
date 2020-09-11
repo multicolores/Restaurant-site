@@ -6,15 +6,12 @@ import { motion, AnimatePresence } from "framer-motion";
 const pageVariants = {
   initial: {
     opacity: 0,
-    y: "-1%",
   },
   in: {
     opacity: 1,
-    y: 0,
   },
   out: {
     opacity: 0,
-    y: "1%",
   },
 };
 const pageTransition = {

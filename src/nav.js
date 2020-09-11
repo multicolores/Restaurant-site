@@ -1,20 +1,47 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./App.scss";
+import { motion } from "framer-motion";
+
 import { Link } from "react-router-dom";
 
 function Nav() {
+  // pour le scroll top
+  const [shouldShowAction, setSouldShowAction] = React.useState(true);
+  const [lastYpos, setLastYPos] = React.useState(0);
+
+  React.useEffect(() => {
+    function handleScroll() {
+      const yPos = window.scrollY;
+      const isScrollingUp = yPos < lastYpos;
+
+      setSouldShowAction(isScrollingUp);
+      setLastYPos(yPos);
+    }
+    window.addEventListener("scroll", handleScroll, false);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll, false);
+    };
+  }, [lastYpos]);
   return (
     <>
-      <nav>
+      <motion.nav
+        initial={{ opacity: 0 }}
+        animate={{ opacity: shouldShowAction ? 1 : 0 }}
+      >
+        <Link to="/" style={{ textDecoration: "none" }}>
+          <span>Restaurant</span>
+        </Link>
+
         <ul>
-          <Link to="/">
+          <Link to="/" style={{ textDecoration: "none" }}>
             <li>Home</li>
           </Link>
-          <Link to="/about">
+          <Link to="/about" style={{ textDecoration: "none" }}>
             <li>About</li>
           </Link>
         </ul>
-      </nav>
+      </motion.nav>
     </>
   );
 }
