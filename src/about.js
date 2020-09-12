@@ -21,8 +21,8 @@ const pageTransition = {
 
 function About() {
   const { scrollYProgress } = useViewportScroll();
-  const opacity = useTransform(scrollYProgress, [-0.001, 0.3], [1, 0]); // [ du haut de la page (0), jusque en bas (1)], [scale passe de 1 ( en haut ), a 1.25 ( en bas )]
-  const y = useTransform(scrollYProgress, [-0.001, 0.3], [0, -100]);
+  const opacity = useTransform(scrollYProgress, [-0.001, 0.05], [1, 0]); // [ du haut de la page (0), jusque en bas (1)], [scale passe de 1 ( en haut ), a 1.25 ( en bas )]
+  const y = useTransform(scrollYProgress, [-0.001, 0.05], [0, -100]);
 
   return (
     <>

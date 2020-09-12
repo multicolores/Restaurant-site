@@ -56,7 +56,7 @@ header {
         position: absolute;
         left: 0;
         top: 50%;
-        background: $text_color;
+        background: $background_color;
         height: 1px;
         width: 10%;
       }
@@ -65,7 +65,7 @@ header {
         position: absolute;
         right: 0;
         top: 50%;
-        background: $text_color;
+        background: $background_color;
         height: 1px;
         width: 10%;
       }
@@ -230,6 +230,20 @@ header {
     pointer-events: none;
     background: rgba(0, 0, 0, 0);
   }
+  //les images entre les menues
+  .image-container-entre {
+    margin-top: 10vh;
+    width: 80vw;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    height: 50vh;
+    overflow: hidden;
+    img {
+      width: 100%;
+      transform: translateY(-20%);
+      transition: 0s;
+    }
+  }
 }
 
 /*--------- Menue ----------*/
@@ -298,7 +312,8 @@ footer {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 30vh;
+    height: 50vh;
+
     p {
       line-height: 150%;
     }
@@ -333,12 +348,14 @@ footer {
       display: flex;
       justify-content: center;
       align-items: center;
+      transition: 1s;
     }
     h1 {
       z-index: 2;
       position: relative;
       font-size: 4vw;
       color: $background_color;
+      transition: 1s;
 
       &::before {
         content: "";

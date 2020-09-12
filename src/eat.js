@@ -2,7 +2,8 @@ import React from "react";
 import "./App.scss";
 import Home from "./home";
 import Footer from "./footer";
-import { motion } from "framer-motion";
+import { motion, useTransform, useViewportScroll } from "framer-motion";
+import image_pates from "./photo/pates.jpg";
 
 const pageVariants = {
   initial: {
@@ -21,6 +22,10 @@ const pageTransition = {
 };
 
 function Eat() {
+  const { scrollYProgress } = useViewportScroll();
+  const scale = useTransform(scrollYProgress, [0, 0.5], [1, 1.1]);
+  const scale3 = useTransform(scrollYProgress, [0.5, 1], [1, 1.1]);
+
   return (
     <motion.div
       initial="initial"
@@ -84,6 +89,14 @@ function Eat() {
           </div>
         </div>
 
+        <div className="image-container-entre">
+          <motion.img
+            src={image_pates}
+            alt=""
+            style={{ scale: scale, y: "-20%" }}
+          />
+        </div>
+
         <div className="plats">
           <h1>Nos Plats</h1>
         </div>
@@ -135,6 +148,14 @@ function Eat() {
           </div>
         </div>
 
+        <div className="image-container-entre">
+          <motion.img
+            src={image_pates}
+            alt=""
+            style={{ scale: scale, y: "-20%" }}
+          />
+        </div>
+
         <div className="desserts">
           <h1>Nos Desserts</h1>
         </div>
@@ -165,7 +186,16 @@ function Eat() {
             <p>7€</p>
           </div>
         </div>
+
+        <div className="image-container-entre">
+          <motion.img
+            src={image_pates}
+            alt=""
+            style={{ scale: scale3, y: "-20%" }}
+          />
+        </div>
       </div>
+
       <Footer />
       <section className="section-invi"></section>
     </motion.div>

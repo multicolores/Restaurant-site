@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import "./App.scss";
-import { motion } from "framer-motion";
+import { motion, useViewportScroll } from "framer-motion";
 
 import { Link } from "react-router-dom";
 
 function Nav() {
-  // pour le scroll top
+  // pour le nav qui apparait quand on scroll vers le top
   const [shouldShowAction, setSouldShowAction] = React.useState(true);
   const [lastYpos, setLastYPos] = React.useState(0);
+  const scroll_bottom = useViewportScroll();
 
   React.useEffect(() => {
     function handleScroll() {
@@ -19,6 +20,9 @@ function Nav() {
     }
     window.addEventListener("scroll", handleScroll, false);
 
+    if (scroll_bottom.scrollYProgress.current > 1.2) {
+      setSouldShowAction(true);
+    }
     return () => {
       window.removeEventListener("scroll", handleScroll, false);
     };
