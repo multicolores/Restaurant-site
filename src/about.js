@@ -43,7 +43,8 @@ function About() {
         <h2>text</h2>
         <p>
           test deploy avec netlify et git hub : ca marche : la ca marche peut
-          etre mieux. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          etre mieux : enfait non ca ne marcher pas mieux avant mais la peut
+          etre ?. Lorem ipsum dolor sit amet consectetur adipisicing elit.
           Explicabo quisquam magnam iusto, consequuntur autem suscipit maiores
           est facilis labore quibusdam excepturi necessitatibus repellendus
           tempora, nam iure perspiciatis, corporis nesciunt neque?
