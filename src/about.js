@@ -42,10 +42,11 @@ function About() {
         </div>
         <h2>text</h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
-          quisquam magnam iusto, consequuntur autem suscipit maiores est facilis
-          labore quibusdam excepturi necessitatibus repellendus tempora, nam
-          iure perspiciatis, corporis nesciunt neque?
+          test deploy avec netlify et git hub : ca marche Lorem ipsum dolor sit
+          amet consectetur adipisicing elit. Explicabo quisquam magnam iusto,
+          consequuntur autem suscipit maiores est facilis labore quibusdam
+          excepturi necessitatibus repellendus tempora, nam iure perspiciatis,
+          corporis nesciunt neque?
         </p>
       </motion.div>
     </>
