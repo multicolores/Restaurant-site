@@ -75,26 +75,28 @@ function Home() {
                   </motion.span>
                 </a>
               </Link>
-              <a href="">
-                <motion.span
-                  onHoverStart={() =>
-                    setRevealImage({
-                      show: true,
-                      image: "home_drink.jpg",
-                      key: "2",
-                    })
-                  }
-                  onHoverEnd={() =>
-                    setRevealImage({
-                      show: true,
-                      image: "home_image.jpg",
-                      key: "0",
-                    })
-                  }
-                >
-                  Drink
-                </motion.span>
-              </a>
+              <Link to="/drink">
+                <a href="">
+                  <motion.span
+                    onHoverStart={() =>
+                      setRevealImage({
+                        show: true,
+                        image: "home_drink.jpg",
+                        key: "2",
+                      })
+                    }
+                    onHoverEnd={() =>
+                      setRevealImage({
+                        show: true,
+                        image: "home_image.jpg",
+                        key: "0",
+                      })
+                    }
+                  >
+                    Drink
+                  </motion.span>
+                </a>
+              </Link>
               <a href="">
                 <motion.span
                   onHoverStart={() =>
@@ -131,6 +133,7 @@ function Home() {
               }}
             />
           </AnimatePresence>
+          <div className="bg-color"></div>
         </header>
       </motion.div>
     </>
