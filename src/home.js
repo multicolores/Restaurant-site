@@ -32,12 +32,18 @@ const images = importAll(
   require.context("./photo", false, /\.(png|jpe?g|svg)$/)
 );
 
-function Home() {
+function Home(props) {
   const [revealImage, setRevealImage] = useState({
     show: true,
     image: "home_image.jpg",
     key: "0",
   });
+  if (props.page == "eat") {
+    console.log(
+      "ouais ca marche now essayer de faire des truc de fou il faut "
+    );
+  }
+
   return (
     <>
       <motion.div
@@ -97,26 +103,28 @@ function Home() {
                   </motion.span>
                 </a>
               </Link>
-              <a href="">
-                <motion.span
-                  onHoverStart={() =>
-                    setRevealImage({
-                      show: true,
-                      image: "home_visit.jpg",
-                      key: "2",
-                    })
-                  }
-                  onHoverEnd={() =>
-                    setRevealImage({
-                      show: true,
-                      image: "home_image.jpg",
-                      key: "0",
-                    })
-                  }
-                >
-                  Visit
-                </motion.span>
-              </a>
+              <Link to="/visit">
+                <a href="">
+                  <motion.span
+                    onHoverStart={() =>
+                      setRevealImage({
+                        show: true,
+                        image: "home_visit.jpg",
+                        key: "2",
+                      })
+                    }
+                    onHoverEnd={() =>
+                      setRevealImage({
+                        show: true,
+                        image: "home_image.jpg",
+                        key: "0",
+                      })
+                    }
+                  >
+                    Visit
+                  </motion.span>
+                </a>
+              </Link>
             </div>
           </div>
           <AnimatePresence initial={false}>

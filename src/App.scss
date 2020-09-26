@@ -333,9 +333,6 @@ footer {
 
 /* -- about -- */
 .about_container {
-  p {
-    margin: 10%;
-  }
   .header {
     width: 100%;
     height: 100vh;
@@ -385,6 +382,56 @@ footer {
         width: 20%;
         animation: before_after 0.5s;
         animation-delay: 0.35s;
+      }
+    }
+  }
+  .chef_section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10vw;
+    .img_container {
+      width: 23vw;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        width: 80%;
+        height: 80%;
+        top: 0;
+        left: 0;
+        border: 15px solid rgba(0, 0, 0, 0.856);
+        transform: translate(-30px, 25%);
+        z-index: -1;
+      }
+      .image {
+        width: 100%;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+      }
+      img {
+        width: 100%;
+        transition: 0.5s;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+    .text_container {
+      width: 27vw;
+      h1 {
+        font-size: 3em;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        font-style: italic;
+      }
+      p {
+        margin-top: 7%;
+        line-height: 130%;
+        font-size: 1.1em;
       }
     }
   }

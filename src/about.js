@@ -1,6 +1,8 @@
 import React from "react";
 import "./App.scss";
 import image from "./photo/home_image.jpg";
+import chef_image from "./photo/chef.jpg";
+
 import { motion, useTransform, useViewportScroll } from "framer-motion";
 
 const pageVariants = {
@@ -40,15 +42,22 @@ function About() {
             <motion.h1 style={{ y: y }}>About</motion.h1>
           </motion.div>
         </div>
-        <h2>text</h2>
-        <p>
-          test deploy avec netlify et git hub : ca marche : la ca marche peut
-          etre mieux : enfait non ca ne marcher pas mieux avant mais la peut
-          etre ?. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Explicabo quisquam magnam iusto, consequuntur autem suscipit maiores
-          est facilis labore quibusdam excepturi necessitatibus repellendus
-          tempora, nam iure perspiciatis, corporis nesciunt neque?
-        </p>
+
+        <section className="chef_section">
+          <div className="img_container">
+            <div className="image">
+              <img src={chef_image} alt="chef" />
+            </div>
+          </div>
+          <div className="text_container">
+            <h1>Notre Chef</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
+              enim nobis id deserunt error aspernatur. Lorem ipsum dolor sit
+              amet consectetur adipisicing elit.
+            </p>
+          </div>
+        </section>
       </motion.div>
     </>
   );

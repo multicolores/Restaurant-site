@@ -5,6 +5,7 @@ import Home from "./home";
 import About from "./about";
 import Eat from "./eat";
 import Drink from "./drink";
+import Visit from "./visit";
 import ScrollToTop from "./scrollToTop";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
@@ -22,6 +23,7 @@ function App() {
                 <Route path="/about" exact component={About} />
                 <Route path="/eat" exact component={Eat} />
                 <Route path="/drink" exact component={Drink} />
+                <Route path="/visit" exact component={Visit} />
               </Switch>
             </AnimatePresence>
           )}

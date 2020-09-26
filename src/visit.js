@@ -21,7 +21,7 @@ const pageTransition = {
   ease: "anticipate",
 };
 
-function Eat() {
+function Visit() {
   const { scrollYProgress } = useViewportScroll();
   const scale = useTransform(scrollYProgress, [0, 0.5], [1, 1.1]);
   const scale3 = useTransform(scrollYProgress, [0.5, 1], [1, 1.1]);
@@ -36,11 +36,11 @@ function Eat() {
       className="eat-container"
     >
       <section className="section-header">
-        <Home page="eat" />
+        <Home />
       </section>
       <div className="container_all">
         <h2></h2>
-        <h1>Nos Entrés</h1>
+        <h1>Visit</h1>
         <div className="item-container">
           <div className="plat-item-container">
             <p>— nom d'entré —</p>
@@ -98,7 +98,7 @@ function Eat() {
         </div>
 
         <div className="plats">
-          <h1>Nos Plats</h1>
+          <h1>Normalement je vais faire une galery d'images</h1>
         </div>
         <div className="item-container">
           <div className="plat-item-container">
@@ -157,7 +157,7 @@ function Eat() {
         </div>
 
         <div className="desserts">
-          <h1>Nos Desserts</h1>
+          <h1>Vins</h1>
         </div>
         <div className="item-container-2">
           <div className="plat-item-container">
@@ -202,4 +202,4 @@ function Eat() {
   );
 }
 
-export default Eat;
+export default Visit;
