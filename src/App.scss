@@ -21,6 +21,10 @@ body {
   color: $text_color;
   overflow-x: hidden;
 }
+body::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
 
 /* HOME */
 header {
@@ -291,6 +295,7 @@ nav {
     font-style: italic;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     color: #c49a68;
+    color: #ff0000b8;
   }
 }
 
@@ -333,6 +338,9 @@ footer {
 
 /* -- about -- */
 .about_container {
+  background: #0f0f0f;
+  color: white;
+  text-align: left;
   .header {
     width: 100%;
     height: 100vh;
@@ -394,30 +402,99 @@ footer {
     .img_container {
       width: 23vw;
       position: relative;
-      &::after {
-        content: "";
+      // &::after {
+      //   content: "";
+      //   position: absolute;
+      //   width: 80%;
+      //   height: 80%;
+      //   top: 0;
+      //   left: 0;
+      //   border: 15px solid rgba(0, 0, 0, 0.856);
+      //   border: 15px solid rgba(255, 0, 0, 0.521);
+
+      //   transform: translate(-30px, 25%);
+      //   z-index: 1;
+      // }
+      .border {
         position: absolute;
         width: 80%;
         height: 80%;
         top: 0;
         left: 0;
         border: 15px solid rgba(0, 0, 0, 0.856);
-        transform: translate(-30px, 25%);
-        z-index: -1;
+        border: 15px solid rgba(255, 255, 255, 0.88);
+        transform: translate(-15%, 35%);
       }
       .image {
         width: 100%;
         top: 0;
         left: 0;
         overflow: hidden;
+        position: relative;
       }
       img {
         width: 100%;
-        transition: 0.5s;
-
-        &:hover {
-          transform: scale(1.1);
+      }
+    }
+    .text_container {
+      width: 27vw;
+      h1 {
+        font-size: 3em;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        font-style: italic;
+        &::after,
+        &::before {
+          background: #0f0f0f;
         }
+      }
+      p {
+        margin-top: 7%;
+        line-height: 130%;
+        font-size: 1.1em;
+      }
+    }
+  }
+  .produit_section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10vw;
+    .img_container {
+      width: 23vw;
+      position: relative;
+      // &::after {
+      //   content: "";
+      //   position: absolute;
+      //   width: 80%;
+      //   height: 80%;
+      //   top: 0;
+      //   left: 0;
+      //   border: 15px solid rgba(0, 0, 0, 0.856);
+      //   border: 15px solid rgba(255, 255, 255, 0.767);
+
+      //   transform: translate(25%, 25%);
+      // }
+      .border {
+        position: absolute;
+        width: 90%;
+        height: 80%;
+        top: 0;
+        left: 0;
+        border: 15px solid rgba(0, 0, 0, 0.856);
+        border: 15px solid rgba(255, 255, 255, 0.88);
+        transform: translate(25%, -15%);
+      }
+      .image {
+        width: 100%;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        position: relative;
+      }
+      img {
+        width: 100%;
       }
     }
     .text_container {

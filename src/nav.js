@@ -37,14 +37,14 @@ function Nav() {
           <span>Restaurant</span>
         </Link>
 
-        <ul>
+        {/* <ul>
           <Link to="/" style={{ textDecoration: "none" }}>
             <li>Home</li>
           </Link>
           <Link to="/about" style={{ textDecoration: "none" }}>
             <li>About</li>
           </Link>
-        </ul>
+        </ul> */}
       </motion.nav>
     </>
   );

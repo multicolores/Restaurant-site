@@ -1,7 +1,9 @@
 import React from "react";
 import "./App.scss";
+import Footer from "./footer";
 import image from "./photo/home_image.jpg";
 import chef_image from "./photo/chef.jpg";
+import produit from "./photo/produit.jpg";
 
 import { motion, useTransform, useViewportScroll } from "framer-motion";
 
@@ -45,6 +47,7 @@ function About() {
 
         <section className="chef_section">
           <div className="img_container">
+            <div className="border"></div>
             <div className="image">
               <img src={chef_image} alt="chef" />
             </div>
@@ -56,6 +59,23 @@ function About() {
               enim nobis id deserunt error aspernatur. Lorem ipsum dolor sit
               amet consectetur adipisicing elit.
             </p>
+          </div>
+        </section>
+        <section className="produit_section">
+          <div className="text_container">
+            <h1>Des produits locaux</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
+              enim nobis id deserunt error aspernatur. Lorem ipsum dolor sit
+              amet consectetur adipisicing elit.
+            </p>
+          </div>
+          <div className="img_container">
+            <div className="border"></div>
+
+            <div className="image">
+              <img src={produit} alt="chef" />
+            </div>
           </div>
         </section>
       </motion.div>
