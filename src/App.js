@@ -7,6 +7,7 @@ import Eat from "./eat";
 import Drink from "./drink";
 import Visit from "./visit";
 import ScrollToTop from "./scrollToTop";
+import Loading from "./loading";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -14,6 +15,7 @@ function App() {
   return (
     <Router>
       <div className="App">
+        <Loading />
         <Nav />
         <Route
           render={({ location }) => (
