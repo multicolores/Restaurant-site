@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./App.scss";
 import Nav from "./nav";
 import Home from "./home";
@@ -11,26 +11,6 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 
 function App() {
-  const [isLoading, setLoading] = useState(true);
-
-  function fakeRequest() {
-    return new Promise((resolve) => setTimeout(() => resolve(), 1));
-  }
-
-  useEffect(() => {
-    fakeRequest().then(() => {
-      const el = document.querySelector(".loader-container");
-      if (el) {
-        el.remove();
-        setLoading(!isLoading);
-      }
-    });
-  }, []);
-
-  if (isLoading) {
-    return null;
-  }
-
   return (
     <Router>
       <div className="App">

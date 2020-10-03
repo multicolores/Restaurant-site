@@ -44,6 +44,10 @@ function Home(props) {
     );
   }
 
+  const [loading, setLoading] = useState({
+    show: false,
+    opacity: 0,
+  });
   return (
     <>
       <motion.div
@@ -53,7 +57,23 @@ function Home(props) {
         variants={pageVariants}
         transition={pageTransition}
       >
-        <header>
+        <motion.h1 style={{ opacity: loading.opacity, color: "blue" }}>
+          Loading...
+        </motion.h1>
+        <header
+          onLoad={() =>
+            setLoading({
+              show: true,
+              opacity: 1,
+            })
+          }
+          onLoadedData={() =>
+            setLoading({
+              show: false,
+              opacity: 0,
+            })
+          }
+        >
           <div className="container-nav-header">
             <div className="adresse">
               <p>32 rue du Maréchale a Laville</p>
