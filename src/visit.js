@@ -4,7 +4,6 @@ import Home from "./home";
 import Footer from "./footer";
 import About from "./about";
 import { motion, useTransform, useViewportScroll } from "framer-motion";
-import image_pates from "./photo/pates.jpg";
 
 const pageVariants = {
   initial: {

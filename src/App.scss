@@ -342,9 +342,31 @@ nav {
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     color: #c49a68;
     color: #ff0000b8;
+
+    background: rgb(157, 89, 121);
+    background: linear-gradient(
+      90deg,
+      rgba(86, 133, 158, 1) 0%,
+      rgba(157, 89, 121, 1) 100%
+    );
+    background-clip: text;
+    color: transparent;
+    animation: bg_span_gradient 10s infinite;
+    background-size: 150%;
+    transition: 0.5s;
   }
 }
-
+@keyframes bg_span_gradient {
+  0% {
+    background-position: left;
+  }
+  50% {
+    background-position: right;
+  }
+  100% {
+    background-position: left;
+  }
+}
 /*---- images slider -----*/
 
 /* .images-container {
@@ -470,6 +492,7 @@ footer {
         border: 15px solid rgba(0, 0, 0, 0.856);
         border: 15px solid rgba(255, 255, 255, 0.88);
         transform: translate(-15%, 35%);
+        opacity: 0.7;
       }
       .image {
         width: 100%;
@@ -484,6 +507,7 @@ footer {
     }
     .text_container {
       width: 27vw;
+      opacity: 0.9;
       h1 {
         font-size: 3em;
         font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
@@ -531,6 +555,7 @@ footer {
         border: 15px solid rgba(0, 0, 0, 0.856);
         border: 15px solid rgba(255, 255, 255, 0.88);
         transform: translate(25%, -15%);
+        opacity: 0.7;
       }
       .image {
         width: 100%;
@@ -545,6 +570,7 @@ footer {
     }
     .text_container {
       width: 27vw;
+      opacity: 0.9;
       h1 {
         font-size: 3em;
         font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",

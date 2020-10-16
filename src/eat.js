@@ -3,7 +3,9 @@ import "./App.scss";
 import Home from "./home";
 import Footer from "./footer";
 import { motion, useTransform, useViewportScroll } from "framer-motion";
-import image_pates from "./photo/pates.jpg";
+import image_entree from "./photo/entree.jpg";
+import image_viande from "./photo/viande.jpg";
+import image_dessert from "./photo/dessert.jpg";
 
 const pageVariants = {
   initial: {
@@ -91,7 +93,7 @@ function Eat() {
 
         <div className="image-container-entre">
           <motion.img
-            src={image_pates}
+            src={image_entree}
             alt=""
             style={{ scale: scale, y: "-20%" }}
           />
@@ -150,7 +152,7 @@ function Eat() {
 
         <div className="image-container-entre">
           <motion.img
-            src={image_pates}
+            src={image_viande}
             alt=""
             style={{ scale: scale, y: "-20%" }}
           />
@@ -189,7 +191,7 @@ function Eat() {
 
         <div className="image-container-entre">
           <motion.img
-            src={image_pates}
+            src={image_dessert}
             alt=""
             style={{ scale: scale3, y: "-20%" }}
           />
