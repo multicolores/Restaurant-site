@@ -2,6 +2,11 @@ import React, { useState } from "react";
 import "./App.scss";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import image_eat from "./photo/home_eat.jpg";
+import image_drink from "./photo/home_drink.jpg";
+import image_visit from "./photo/home_visit.jpg";
+import image_home from "./photo/home_image.jpg";
+
 
 const pageVariants = {
   initial: {
@@ -19,30 +24,38 @@ const pageTransition = {
   ease: "anticipate",
 };
 
-// importer toutes les images d'un coup et tous les affichers
-function importAll(r) {
-  let images = {};
-  r.keys().map((item, index) => {
-    images[item.replace("./", "")] = r(item);
-  });
-  return images;
-}
+// // importer toutes les images d'un coup et tous les affichers
+// function importAll(r) {
+//   let images = {};
+//   r.keys().map((item, index) => {
+//     images[item.replace("./", "")] = r(item);
+//   });
+//   return images;
+// }
 
-const images = importAll(
-  require.context("./photo", false, /\.(png|jpe?g|svg)$/)
-);
+// const images = importAll(
+//   require.context("./photo", false, /\.(png|jpe?g|svg)$/)
+// );
 
 function Home(props) {
+  // savoir sur quel page on est et afficher du coup l'image de fond correspondante
+  let acutal_page = image_home;
+  if (props.page == "eat") {
+    acutal_page = image_eat;
+  }
+  if (props.page == "drink") {
+    acutal_page = image_drink;
+  }
+  if (props.page == "visit") {
+    acutal_page = image_visit;
+  }
+
   const [revealImage, setRevealImage] = useState({
     show: true,
-    image: "home_image.jpg",
+    image: acutal_page,
     key: "0",
   });
-  if (props.page == "eat") {
-    console.log(
-      "ouais ca marche now essayer de faire des truc de fou il faut "
-    );
-  }
+
 
 
   return (
@@ -67,14 +80,14 @@ function Home(props) {
                     onHoverStart={() =>
                       setRevealImage({
                         show: true,
-                        image: "home_eat.jpg",
+                        image: image_eat,
                         key: "1",
                       })
                     }
                     onHoverEnd={() =>
                       setRevealImage({
-                        show: false,
-                        image: "home_image.jpg",
+                        show: true,
+                        image: acutal_page,
                         key: "0",
                       })
                     }
@@ -89,14 +102,14 @@ function Home(props) {
                     onHoverStart={() =>
                       setRevealImage({
                         show: true,
-                        image: "home_drink.jpg",
+                        image: image_drink,
                         key: "2",
                       })
                     }
                     onHoverEnd={() =>
                       setRevealImage({
                         show: true,
-                        image: "home_image.jpg",
+                        image: acutal_page,
                         key: "0",
                       })
                     }
@@ -111,14 +124,14 @@ function Home(props) {
                     onHoverStart={() =>
                       setRevealImage({
                         show: true,
-                        image: "home_visit.jpg",
+                        image: image_visit,
                         key: "2",
                       })
                     }
                     onHoverEnd={() =>
                       setRevealImage({
                         show: true,
-                        image: "home_image.jpg",
+                        image: acutal_page,
                         key: "0",
                       })
                     }
@@ -132,7 +145,7 @@ function Home(props) {
           <AnimatePresence initial={false}>
             <motion.img
               key={revealImage.key}
-              src={images[revealImage.image]}
+              src={revealImage.image}
               alt=""
               className="background_image"
               initial={{ opacity: 0 }}

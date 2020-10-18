@@ -36,7 +36,7 @@ function Visit() {
       className="eat-container"
     >
       <section className="section-header">
-        <Home />
+        <Home page="visit"/>
       </section>
       <About />
 

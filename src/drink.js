@@ -39,7 +39,7 @@ function Drink() {
       className="eat-container"
     >
       <section className="section-header">
-        <Home />
+        <Home page="drink"/>
       </section>
       <div className="container_all">
         <h2></h2>
