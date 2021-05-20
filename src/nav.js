@@ -33,9 +33,12 @@ function Nav() {
         initial={{ opacity: 0 }}
         animate={{ opacity: shouldShowAction ? 1 : 0 }}
       >
+        <div>
         <Link to="/" style={{ textDecoration: "none" }}>
           <span>Restaurant</span>
         </Link>
+        </div>
+
 
         {/* <ul>
           <Link to="/" style={{ textDecoration: "none" }}>

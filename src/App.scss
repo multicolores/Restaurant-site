@@ -108,11 +108,18 @@ header {
     color: white;
     font-style: italic;
     font-size: 120%;
+    @media (max-width: 580px) {
+      font-size: 3vw;
+    }
     p {
       display: inline;
       position: relative;
       padding-left: 6%;
       padding-right: 6%;
+      @media (max-width: 580px) {
+        padding-left: 10%;
+        padding-right: 10%;
+      }
       &::before {
         content: "";
         position: absolute;
@@ -138,7 +145,9 @@ header {
     justify-content: space-between;
     width: 47vw;
     font-style: italic;
-
+    @media (max-width: 650px) {
+      width: 80vw;
+    }
     a {
       text-decoration: none;
 
@@ -157,6 +166,9 @@ header {
       color: white;
       transition: 0.5s;
       position: relative;
+      @media (max-width: 650px) {
+        font-size: 10vw;
+      }
       &::after {
         content: "";
         position: absolute;
@@ -359,6 +371,9 @@ nav {
     animation: bg_span_gradient 10s infinite;
     background-size: 150%;
     transition: 0.5s;
+    @media (max-width: 580px) {
+      font-size: 6vw;
+    }
   }
 }
 @keyframes bg_span_gradient {
@@ -398,13 +413,23 @@ footer {
     justify-content: space-around;
     align-items: center;
     height: 50vh;
-
+    @media (max-width: 650px) {
+      flex-direction: column;
+    }
     p {
       line-height: 150%;
     }
     h3 {
       font-style: italic;
       font-size: 2vw;
+      @media (max-width: 650px) {
+        font-size: 6vw;
+      }
+    }
+    h1 {
+      @media (max-width: 650px) {
+        font-size: 9vw;
+      }
     }
   }
 }
@@ -425,6 +450,9 @@ footer {
     img {
       width: 100%;
       position: absolute;
+      @media (max-width: 650px) {
+        height: 100%;
+      }
     }
     .h1 {
       width: 100%;
@@ -441,7 +469,9 @@ footer {
       font-size: 4vw;
       color: $background_color;
       transition: 1s;
-
+      @media (max-width: 650px) {
+        font-size: 10vw;
+      }
       &::before {
         content: "";
         position: absolute;
@@ -471,10 +501,16 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    @media (max-width: 650px) {
+      flex-direction: column;
+    }
     gap: 10vw;
     .img_container {
       width: 23vw;
       position: relative;
+      @media (max-width: 650px) {
+        width: 50%;
+      }
       // &::after {
       //   content: "";
       //   position: absolute;
@@ -513,6 +549,9 @@ footer {
     .text_container {
       width: 27vw;
       opacity: 0.9;
+      @media (max-width: 650px) {
+        width: 80%;
+      }
       h1 {
         font-size: 3em;
         font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
@@ -536,9 +575,15 @@ footer {
     justify-content: center;
     align-items: center;
     gap: 10vw;
+    @media (max-width: 650px) {
+      flex-direction: column;
+    }
     .img_container {
       width: 23vw;
       position: relative;
+      @media (max-width: 650px) {
+        width: 50%;
+      }
       // &::after {
       //   content: "";
       //   position: absolute;
@@ -576,6 +621,9 @@ footer {
     .text_container {
       width: 27vw;
       opacity: 0.9;
+      @media (max-width: 650px) {
+        width: 80%;
+      }
       h1 {
         font-size: 3em;
         font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
